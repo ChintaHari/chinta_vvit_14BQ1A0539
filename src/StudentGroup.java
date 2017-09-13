@@ -139,12 +139,17 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+		if(index<0 || index>= students.length)
+			throw new IllegalArgumentException;
+		else
+		{
 		for(int i =index;i<student.length-1;i++)
 		{
 			students[i].setId(students[i+1].getId());
 			students[i].setFullName(students[i+1].getFullName());
 			students[i].setBirthDate(students[i+1].getBirthDate());
 			students[i].setAvgMark(students[i+1].getAvgMark());
+		}
 		}
 	}
 
@@ -156,6 +161,18 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+		if(index<0 || index>= students.length)
+			throw new IllegalArgumentException;
+		else
+		{
+		for(int i =index;i<student.length;i++)
+		{
+			students[i].setId(null);
+			students[i].setFullName(null);
+			students[i].setBirthDate(null);
+			students[i].setAvgMark(null);
+		}
+		}
 	}
 
 	@Override
